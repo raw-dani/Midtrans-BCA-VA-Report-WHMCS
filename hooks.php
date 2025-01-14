@@ -162,12 +162,11 @@ add_hook('DailyCronJob', 1, function() {
     }
 });
 
-
-// function getModuleConfigParams($module) {
-//     $result = WHMCS\Database\Capsule::table('tbladdonmodules')
-//         ->where('module', $module)
-//         ->pluck('value', 'setting')
-//         ->toArray();
+function getModuleConfigParams($module) {
+    $result = \WHMCS\Database\Capsule::table('tbladdonmodules')
+        ->where('module', $module)
+        ->pluck('value', 'setting')
+        ->toArray();
     
-//     return $result;
-// }
+    return $result;
+}
